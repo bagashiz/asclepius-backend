@@ -1,0 +1,39 @@
+# exclude any development-specific files
+.vscode
+.idea
+.devcontainer
+
+# exclude any dependency directories
+node_modules
+vendor
+
+# exclude build artifacts
+build
+dist
+bin
+tmp
+logs
+
+# exclude any version control files
+.git
+
+# exclude CI files
+.github
+.gitlab-ci.yml
+
+# exclude Docker files
+Dockerfile*
+docker-compose*.yml
+
+# exclude any development-specific files
+eslint.config.mjs
+.eslintrc*
+.prettierrc*
+.*ignore
+*.env
+*.log
+*.md
+*.out
+*.toml
+*.test
+*.yml

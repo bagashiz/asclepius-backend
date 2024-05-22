@@ -1,0 +1,55 @@
+{
+	"name": "asclepius-backend",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:20-bookworm",
+	"runArgs": [
+		"--name",
+		"asclepius-backend_devcontainer",
+		"--network=host"
+	],
+	"features": {
+		"ghcr.io/devcontainers/features/common-utils:2": {
+			"configureZshAsDefaultShell": true
+		},
+		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {},
+		"ghcr.io/dhoeric/features/google-cloud-cli:1": {}
+	},
+	"portsAttributes": {
+		"3000": {
+			"label": "Application",
+			"onAutoForward": "notify"
+		}
+	},
+	"postCreateCommand": "npm install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"esbenp.prettier-vscode", // prettier
+				"dbaeumer.vscode-eslint", // eslint
+				"leizongmin.node-module-intellisense", // node module intellisense
+				"christian-kohler.npm-intellisense", // npm intellisense
+				"VisualStudioExptTeam.vscodeintellicode", // intellisense
+				"mgmcdermott.vscode-language-babel", // babel syntax highlighting
+				"xabikos.JavaScriptSnippets", // js es6 code snippets
+				"waderyan.gitblame", // git blame
+				"oderwat.indent-rainbow", // colorize indentation
+				"davidanson.vscode-markdownlint", // markdown linting
+				"redhat.vscode-yaml", // yaml syntax highlighting
+				"github.copilot" // ai code completion
+			],
+			"settings": {
+				"editor.formatOnSave": true,
+				"editor.codeActionsOnSave": {
+					"source.fixAll.eslint": "explicit"
+				},
+				"javascript.updateImportsOnFileMove.enabled": "always",
+				"js/ts.implicitProjectConfig.checkJs": true,
+				"[javascript][typescript][jsonc][json][html]": {
+					"editor.defaultFormatter": "esbenp.prettier-vscode"
+				},
+				"[yaml]": {
+					"editor.defaultFormatter": "redhat.vscode-yaml"
+				}
+			}
+		}
+	}
+}

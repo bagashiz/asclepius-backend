@@ -1,0 +1,9 @@
+# IDE-specific files
+.vscode
+.idea
+
+# Development-specific files
+node_modules
+logs
+*.log
+*.env
